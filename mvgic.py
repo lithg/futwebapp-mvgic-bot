@@ -135,10 +135,16 @@ class Ui_Dialog(object):
         self.label_13.setText("")
         self.label_13.setObjectName("label_13")
         self.lineEdit_posts = QtWidgets.QLineEdit(Dialog)
-        self.lineEdit_posts.setGeometry(QtCore.QRect(270, 210, 251, 31))
+        self.lineEdit_posts.setGeometry(QtCore.QRect(270, 210, 121, 31))
         self.lineEdit_posts.setStyleSheet("background-color: rgb(233, 237, 238);border: 2px solid rgb(233, 237, 238); padding: 1px; border-style: solid; border-radius: 8px")
         self.lineEdit_posts.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_posts.setObjectName("lineEdit_posts")
+
+        self.lineEdit_time = QtWidgets.QLineEdit(Dialog)
+        self.lineEdit_time.setGeometry(QtCore.QRect(400, 210, 121, 31))
+        self.lineEdit_time.setStyleSheet("background-color: rgb(233, 237, 238);border: 2px solid rgb(233, 237, 238); padding: 1px; border-style: solid; border-radius: 8px")
+        self.lineEdit_time.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_time.setObjectName("lineEdit_time")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -161,6 +167,7 @@ class Ui_Dialog(object):
         self.label_aviso2.setText(_translate("Dialog", "seguidas nos botões"))
         self.label_aviso3.setText(_translate("Dialog", "para evitar crash"))
         self.lineEdit_posts.setPlaceholderText(_translate("Dialog", "posts"))
+        self.lineEdit_time.setPlaceholderText(_translate("Dialog", "tempo"))
 
 
         self.label_erro.hide()
@@ -206,6 +213,9 @@ class Ui_Dialog(object):
                 driver.find_element_by_id('ball').click()
                 cont+=1
                 self.label_posts_valor.setText(str(cont))
+                if (isinstance(int(self.lineEdit_time.text(), (int))) == True):
+                    time.sleep(int(self.lineEdit_time.text()))
+
             self.label_erro.setText('Partida finalizada!')
             self.label_erro.setStyleSheet('color: green; background-color: white')
             self.label_erro.show()
