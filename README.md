@@ -1,6 +1,6 @@
 # Features
 
-Python bot that search for a id and click (post) it N times. 
+Python bot that search for an id and click (post) it N times. 
 
 # Graphic User Interface by PyQT5
 
